@@ -1,0 +1,22 @@
+@font-face {
+    src: url("/fonts/CRENZO.ttf") format("truetype");
+    font-family: "Crenzo";
+    font-style: "normal";
+    font-weight: "normal";
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Roboto";
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+li{
+    list-style: none;
+}
