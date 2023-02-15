@@ -23,21 +23,23 @@ module.exports = {
   add: (req, res) => {
 
     return res.render("productAdd",{
-      categories : readJSON('categories.json')
+      categories : readJSON('categories.json'),
+      brands : readJSON('brands.json')
     });
   },
   store: (req, res) => {
 
       const products = readJSON('products.json');
-      const { name, price, category, description, discount } = req.body;      
+      const { name, price, category, description, discount, brand } = req.body;      
 
       const newProduct = {
         id: products.length ? products[products.length - 1].id + 1 : 1,
         name: name.trim(),
         price: +price,
-        discount,
+        discount : +discount,
         category,
-        description : name.trim(),
+        brand,
+        description : description.trim(),
         image : req.file ? req.file.filename : null,
       };
 
@@ -45,7 +47,7 @@ module.exports = {
 
       writeJSON('products.json', products)
 
-      return res.redirect("/products");
+      return res.redirect("/");
    
   },
   edit: (req, res) => {
@@ -58,7 +60,7 @@ module.exports = {
     });
   },
   update: (req, res) => {
-      const { name, price, category, description, discount } = req.body;      
+      const { name, price, category, description, discount, brand } = req.body;      
       const products = readJSON('products.json');
 
       const productsModify = products.map((product) => {
@@ -66,11 +68,12 @@ module.exports = {
 
           let productModify = {
             ...product,
-            name,
+            name : name.trim(),
             price: +price,
-            category: +category,
-            images : req.files && req.files.images ? req.files.images.map(file => file.filename) : product.images,
-            mainImage : req.files && req.files.mainImage ? req.files.mainImage[0].filename : product.mainImage,
+            category,
+            brand,
+            description : description.trim(),
+            image : req.file ? req.file.filename : product.image,
           };
         
           return productModify;
@@ -80,7 +83,7 @@ module.exports = {
 
      writeJSON('products.json', productsModify)
 
-      return res.redirect("/products");
+      return res.redirect("/");
 
   },
 
@@ -91,7 +94,7 @@ module.exports = {
     writeJSON('products.json', productFilter)
 
 
-    return res.redirect("/products");
+    return res.redirect("/");
   },
 
 };

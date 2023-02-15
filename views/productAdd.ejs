@@ -14,51 +14,60 @@
                             </div>
                             <div class="card-body">
 
-                                <form class="row needs-validation" action="" method="POST" enctype="multipart/form-data"
+                                <form class="row" action="" method="POST" enctype="multipart/form-data"
                                     novalidate>
-                                    <div class="col-12 col-md-8  mb-3 ">
-                                            <input placeholder="Nombre" type="text" name="name" id="name" class="form-control"
-                                               >
-                                         
-                                   
-                                     
+                                    <div class="col-12 mb-3 ">
+                                        <input placeholder="Nombre" type="text" name="name" id="name"
+                                            class="form-control">
                                     </div>
-                                    <div class="col-12 col-md-4 mb-3">
-                                        <select name="categoria" id="categoria" class="form-select" required>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <select name="category" id="category" class="form-select" required>
                                             <option value="" selected hidden>Categoría</option>
                                             <% categories.forEach(category=> { %>
-                                                <option value="<%= category %>"><%=
-                                                        category %>
+                                                <option value="<%= category %>">
+                                                    <%= category %>
                                                 </option>
                                                 <% }) %>
                                         </select>
-                                      
-                                    
+
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <select name="brand" id="brand" class="form-select" required>
+                                            <option value="" selected hidden>Marca</option>
+                                            <% brands.forEach(brand=> { %>
+                                                <option value="<%= brand %>">
+                                                    <%= brand %>
+                                                </option>
+                                                <% }) %>
+                                        </select>
+
                                     </div>
                                     <div class="col-12 mb-3">
 
-                                        <textarea placeholder="Descripcion" name="descripcion" id="descripcion" cols="30" rows="3" class="form-control"
-                                            required style="resize: none;"></textarea>
-                                        
-                                    
+                                        <textarea placeholder="Descripcion" name="descripcion" id="descripcion"
+                                            cols="30" rows="3" class="form-control" required
+                                            style="resize: none;"></textarea>
+
                                     </div>
-                                  
+
                                     <div class="col-12 col-md-6 mb-3">
-                                        <input placeholder="Precio" type="number" name="precio" id="precio" class="form-control">
-                                      
-                                       
+                                        <input placeholder="Precio" type="number" name="precio" id="precio"
+                                            class="form-control">
+
                                     </div>
-                                 
-                            
+
+
                                     <div class="col-12 col-md-6 mb-3">
-                                        <input placeholder="Descuento" type="number" name="discount" id="discount" class="form-control">
-                                      
-                                       
+                                        <input placeholder="Descuento" type="number" name="discount" id="discount"
+                                            class="form-control">
+
+
                                     </div>
-                           
+
                                     <div class="col-12 col-md-6 mb-3 ">
-                                        <input type="file" name="image" id="imagen"  accept="image/*" class="form-control">
-                                    
+                                        <input type="file" name="image" id="imagen" accept="image/*"
+                                            class="form-control">
+
 
                                     </div>
 
