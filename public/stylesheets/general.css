@@ -1,22 +1,26 @@
-@font-face {
-    src: url("/fonts/CRENZO.ttf") format("truetype");
-    font-family: "Crenzo";
-    font-style: "normal";
-    font-weight: "normal";
-}
-
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
-}
-body{
-    font-family: "Roboto";
-}
-a{
-    text-decoration: none;
-    color: white;
-}
-li{
-    list-style: none;
-}
+    padding: 0; }
+  
+  a {
+    text-decoration: none; }
+  
+  li {
+    list-style: none; }
+  
+  body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #2e2f34;
+    max-width: 1140px;
+    margin: 0 auto;
+    background-image: url("/images/bg-2.png"); }
+    body.dark {
+      background-image: url("/images/bg-dark.jpg");
+      color: whitesmoke; }
+  
+  :root {
+    --color-rojo: #EF4c27
+      --color-gris : #9B9B9B
+  ; }
+  

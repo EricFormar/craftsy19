@@ -1,134 +1,97 @@
-const fs = require("fs");
-const path = require("path");
-
+const { readJSON, writeJSON } = require("../data");
 
 module.exports = {
-  add: (req, res) => {
-    return res.render("productAdd", {
-      categories,
+  list: (req, res) => {
+    const products = readJSON('products.json');
+
+    return res.render("admin/adminProducts", {
+      products,
     });
-  },
-  store: (req, res) => {
-      let { name, price, category, state, origin } = req.body;
-      let lastID = products[products.length - 1].id;
-      let images = req.files.map((image) => image.filename);
-      let newProduct = {
-        id: +lastID + 1,
-        name: name.trim(),
-        price: +price,
-        category: +category,
-        img: images.length > 0 ? images : ["noimage.jpeg"],
-        features: [origin, state],
-        visible : visible ? true : false
-      };
-
-      products.push(newProduct);
-
-      fs.writeFileSync(
-        path.resolve(__dirname, "..", "data", "products.json"),
-        JSON.stringify(products, null, 3),
-        "utf-8"
-      );
-
-      return res.redirect("/");
-   
-  },
-  edit: (req, res) => {
-    const { id } = req.params;
-    const product = products.find((product) => product.id === +id);
-
-    return res.render("productEdit", {
-      categories,
-      product,
-    });
-  },
-  update: (req, res) => {
-      const { id } = req.params;
-      let { name, price, category, state, origin } = req.body;
-
-      const productsModify = products.map((product) => {
-        if (product.id === +id) {
-
-          
-          let productModify = {
-            ...product,
-            name,
-            price: +price,
-            category: +category,
-            features: [origin, state],
-            img: req.files.length > 0 ? images : product.img,
-          };
-          if (req.file.length > 0) {
-     
-          }
-          return productModify;
-        }
-        return product;
-      });
-
-      fs.writeFileSync(
-        path.resolve(__dirname, "..", "data", "products.json"),
-        JSON.stringify(productsModify, null, 3),
-        "utf-8"
-      );
-
-      return res.redirect("/");
-
   },
   detail: (req, res) => {
-    const { id } = req.params;
-    const product = products.find((product) => product.id === +id);
+    const products = readJSON('products.json');
+
+    const product = products.find((product) => product.id === +req.params.id);
 
     return res.render("productDetail", {
       product,
     });
   },
-  cart: (req, res) => res.render("productCart"),
-  getByCategory: (req, res) => {
-    const { idCategory } = req.params;
-
-    const { name } = categories.find((category) => category.id === +idCategory);
-
-    return res.render("categories", {
-      name,
-      products: products.filter((product) => product.category === +idCategory),
-    });
-  },
   search: (req, res) => {
-    const { keyword } = req.query;
-    const result = products.filter((product) =>
-      product.name.toLowerCase().includes(keyword.toLowerCase())
-    );
+    return res.send(req.query)
+  },
+  add: (req, res) => {
 
-    let namesCategories = categories.map((category) => {
-      return {
-        id: category.id,
-        name: category.name,
+    return res.render("productAdd",{
+      categories : readJSON('categories.json')
+    });
+  },
+  store: (req, res) => {
+
+      const products = readJSON('products.json');
+      const { name, price, category, description, discount } = req.body;      
+
+      const newProduct = {
+        id: products.length ? products[products.length - 1].id + 1 : 1,
+        name: name.trim(),
+        price: +price,
+        discount,
+        category,
+        description : name.trim(),
+        image : req.file ? req.file.filename : null,
       };
-    });
 
-    return res.render("result", {
-      products: result,
-      keyword,
-      namesCategories,
+      products.push(newProduct);
+
+      writeJSON('products.json', products)
+
+      return res.redirect("/products");
+   
+  },
+  edit: (req, res) => {
+    const products = readJSON('products.json');
+
+    const product = products.find((product) => product.id === +req.params.id);
+
+    return res.render("productEdit", {
+      product,
     });
   },
+  update: (req, res) => {
+      const { name, price, category, description, discount } = req.body;      
+      const products = readJSON('products.json');
+
+      const productsModify = products.map((product) => {
+        if (product.id === +req.params.id) {
+
+          let productModify = {
+            ...product,
+            name,
+            price: +price,
+            category: +category,
+            images : req.files && req.files.images ? req.files.images.map(file => file.filename) : product.images,
+            mainImage : req.files && req.files.mainImage ? req.files.mainImage[0].filename : product.mainImage,
+          };
+        
+          return productModify;
+        }
+        return product;
+      });
+
+     writeJSON('products.json', productsModify)
+
+      return res.redirect("/products");
+
+  },
+
   remove: (req, res) => {
-    const { id } = req.params;
 
-    const productFilter = products.filter((product) => product.id !== +id);
+    const productFilter = products.filter((product) => product.id !== +req.params.id);
 
-    fs.writeFileSync(
-      path.resolve(__dirname, "..", "data", "products.json"),
-      JSON.stringify(productFilter, null, 3),
-      "utf-8"
-    );
+    writeJSON('products.json', productFilter)
 
-    return res.redirect("/");
+
+    return res.redirect("/products");
   },
-  list: (req, res) => {
-    return res.render("admin/adminProducts", {
-      products,
-    });
-  },
+
 };

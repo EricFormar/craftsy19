@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head',{title: "Agregar producto" }) %>
+
+    <body class="register">
+        <%- include('./partials/header') %>
+            <main>
+                <div class="row">
+                    <div class="col-12 col-md-8 mx-auto mt-3">
+                        <div class="card shadow">
+                            <div class="card-header">
+                                <h4>CARGA DE PRODUCTO</h4>
+
+                            </div>
+                            <div class="card-body">
+
+                                <form class="row needs-validation" action="" method="POST" enctype="multipart/form-data"
+                                    novalidate>
+                                    <div class="col-12 col-md-8  mb-3 ">
+                                            <input placeholder="Nombre" type="text" name="name" id="name" class="form-control"
+                                               >
+                                         
+                                   
+                                     
+                                    </div>
+                                    <div class="col-12 col-md-4 mb-3">
+                                        <select name="categoria" id="categoria" class="form-select" required>
+                                            <option value="" selected hidden>Categoría</option>
+                                            <% categories.forEach(category=> { %>
+                                                <option value="<%= category %>"><%=
+                                                        category %>
+                                                </option>
+                                                <% }) %>
+                                        </select>
+                                      
+                                    
+                                    </div>
+                                    <div class="col-12 mb-3">
+
+                                        <textarea placeholder="Descripcion" name="descripcion" id="descripcion" cols="30" rows="3" class="form-control"
+                                            required style="resize: none;"></textarea>
+                                        
+                                    
+                                    </div>
+                                  
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <input placeholder="Precio" type="number" name="precio" id="precio" class="form-control">
+                                      
+                                       
+                                    </div>
+                                 
+                            
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <input placeholder="Descuento" type="number" name="discount" id="discount" class="form-control">
+                                      
+                                       
+                                    </div>
+                           
+                                    <div class="col-12 col-md-6 mb-3 ">
+                                        <input type="file" name="image" id="imagen"  accept="image/*" class="form-control">
+                                    
+
+                                    </div>
+
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <button class="btn btn-dark w-100" type="submit">Agregar</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+            <%- include('./partials/footer') %>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </body>
+
+</html>

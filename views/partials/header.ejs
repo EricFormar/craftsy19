@@ -1,30 +1,35 @@
 <header>
-    <div class="header__logo">
-        <a href="/"><img src="/images/logo.png" alt=""></a>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"><img src="/images/logo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li><a class="nav-link" href="/">Inicio </a></li>
 
-    <nav class="header__menu">
-        <ul class="header__menu__sitio">
-            <li><a href="/products?category=1">Celulares</a></li>
-            <li><a href="/products?category=2">Tablets</a></li>
-            <li><a href="/products?category=3">Computadoras</a></li>
+              <li><a class="nav-link" href="/products/add">Agregar </a></li>
+            </ul>
+            <form id="form-search-header" class="d-flex" action="/search" >
+                <input id="search-header" class="form-control me-2" type="search" placeholder="Buscar..." name="busqueda">
+                <button class="btn btn-outline-light" type="submit">Buscar</button>
+              </form>
+            
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li><a class="nav-link" href="#">Ingresá </a></li>
+
+                <li><a class="nav-link" href="#">Registrate </a></li>
+               
+              
+            
           
-
-        </ul>
-        <ul>
-            <form action="/search" method="GET">
-                <div class="d-flex">
-                    <input type="text" name="keyword" placeholder="Buscar productos..." class="form-control">
-                    <button type="submit" class="btn btn-outline-light ms-1">Buscar</button>
-                </div>
-            </form>
-        </ul>
-        <ul class="header__menu__usuarios">
-                <li><a href="/users/register">REGISTRATE</a></li>
-                <li><a href="/users/login">INGRESA</a></li>
-                <li><a href="/users/profile">MI PERFIL</a></li>
-                <li><a href="/users/logout">SALIR</a></li>
-           
-        </ul>
-    </nav>
+              </ul>
+          
+          </div>
+         
+        </div>
+      
+      </nav>
+     
 </header>

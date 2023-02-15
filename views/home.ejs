@@ -1,13 +1,163 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <%- include('./partials/head') %>
-  <body>
-    <%- include('./partials/header') %>
 
-    <h1><%= title %></h1>
-    
-    <p>Welcome to <%= title %></p>
-    <%- include('./partials/footer') %>
+    <body class="home">
+        <%- include('./partials/header') %>
+        <section class="home__banner d-none d-md-block">
+            <div
+              id="carouselExampleIndicators"
+              class="carousel slide"
+              data-bs-ride="true"
+            >
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="3"
+                  aria-label="Slide 4"
+                ></button>
+              </div>
+              <div class="carousel-inner">
+                <div
+                  class="carousel-item active"
+                  style="
+                    background-image: url('/images/banner/banner_1.jpg');
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                    background-position: top center;
+                  "
+                ></div>
+                <div
+                  class="carousel-item"
+                  style="
+                    background-image: url('/images/banner/banner_2.jpg');
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                    background-position: top center;
+                  "
+                ></div>
+                <div
+                  class="carousel-item"
+                  style="
+                    background-image: url('/images/banner/banner_3.jpg');
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                    background-position: top center;
+                  "
+                ></div>
+                <div
+                  class="carousel-item"
+                  style="
+                    background-image: url('/images/banner/banner_4.jpg');
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                    background-position: top center;
+                  "
+                ></div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev"
+              >
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next"
+              >
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </section>
+            <main>
 
-  </body>
+                <section class="productos">
+                    <h3 class="w-100">Celulares nuevos</h3>
+
+                    <% products.forEach(({image,name,description,id})=> { %>
+                        <article>
+                                <img width="100%" src="/images/products/<%=image ? image : 'default-image.png'%>" alt="">
+
+                            <img class="img-discount" src="/images/img-descuento.png" alt="">
+                            <h4>
+                                <%= name %>
+                            </h4>
+                           
+                            <div class="text-end">
+                                <a class="btn btn-sm btn-dark" href="/products/detail/<%= id %>">ver
+                                    más</a>
+                                
+                            </div>
+
+                        </article>
+
+                        <% }) %>
+
+                      
+                </section>
+           
+                <aside>
+                    <h3>Tutoriales</h3>
+                    <section class="tuto">
+                        <article>
+                            <img src="/images/aside-01.jpg" alt="">
+                            <p>Titulo del tutorial de reparación</p>
+                        </article>
+                        <article>
+                            <img src="/images/aside-02.jpg" alt="">
+                            <p>Titulo del tutorial de reparación</p>
+                        </article>
+                        <article>
+                            <img src="/images/aside-03.jpg" alt="">
+                            <p>Titulo del tutorial de reparación</p>
+                        </article>
+                        <article>
+                            <img src="/images/aside-04.jpg" alt="">
+                            <p>Titulo del tutorial de reparación</p>
+                        </article>
+                    </section>
+                    <h3 class="title-ads">Publicidad</h3>
+                    <section class="ads">
+                        <img src="/images/ad-01.jpg" alt="">
+                        <img src="/images/ad-02.jpg" alt="">
+                    </section>
+                </aside>
+                <section class="w-100">
+
+                  <!-- TODO: carousel with glider -->
+
+                </section>
+            </main>
+            <%- include('./partials/footer') %>
+            <%- include('./partials/scripts') %>
+
+    </body>
+
 </html>

@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "name": "felis eu",
+    "price": 60593,
+    "discount": 26,
+    "description": "Etiam vel augue. Vestibulum rutrum rutrum neque.",
+    "category": "Nuevo",
+    "brand": "Xiaomi",
+    "image": "img-phone-01.jpg"
+  },
+  {
+    "id": 2,
+    "name": "congue elementum",
+    "price": 51194,
+    "discount": 28,
+    "description": "Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "category": "Refaccionado",
+    "brand": "Huawei",
+    "image": "img-phone-02.jpg"
+  },
+  {
+    "id": 3,
+    "name": "orci mauris",
+    "price": 22264,
+    "discount": 14,
+    "description": "Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+    "category": "Nuevo",
+    "brand": "Alcatel",
+    "image": "img-phone-03.jpg"
+  },
+  {
+    "id": 4,
+    "name": "est phasellus sit",
+    "price": 51388,
+    "discount": 28,
+    "description": "Etiam faucibus cursus urna. Ut tellus.",
+    "category": "Refaccionado",
+    "brand": "Samsung",
+    "image": "img-phone-01.jpg"
+  },
+  {
+    "id": 5,
+    "name": "elementum ligula",
+    "price": 60267,
+    "discount": 11,
+    "description": "Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.",
+    "category": "Nuevo",
+    "brand": "Blackberry",
+    "image": "img-phone-02.jpg"
+  },
+  {
+    "id": 6,
+    "name": "integer a",
+    "price": 59559,
+    "discount": 5,
+    "description": "Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+    "category": "Refaccionado",
+    "brand": "Philips",
+    "image": "img-phone-03.jpg"
+  },
+  {
+    "id": 7,
+    "name": "nulla nunc purus",
+    "price": 20326,
+    "discount": 5,
+    "description": "Aenean lectus. Pellentesque eget nunc.",
+    "category": "Nuevo",
+    "brand": "Nokia",
+    "image": "img-phone-01.jpg"
+  },
+  {
+    "id": 8,
+    "name": "libero quis",
+    "price": 25142,
+    "discount": 25,
+    "description": "Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
+    "category": "Refaccionado",
+    "brand": "Xiaomi",
+    "image": "img-phone-02.jpg"
+  },
+  {
+    "id": 9,
+    "name": "consequat in consequat",
+    "price": 11523,
+    "discount": 6,
+    "description": "Nulla nisl. Nunc nisl.",
+    "category": "Nuevo",
+    "brand": "Iphone",
+    "image": "img-phone-03.jpg"
+  },
+  {
+    "id": 10,
+    "name": "dictumst aliquam",
+    "price": 63430,
+    "discount": 11,
+    "description": "Sed accumsan felis. Ut at dolor quis odio consequat varius.",
+    "category": "Refaccionado",
+    "brand": "Blackberry",
+    "image": "img-phone-01.jpg"
+  },
+  {
+    "id": 11,
+    "name": "ut ultrices vel",
+    "price": 54007,
+    "discount": 22,
+    "description": "Quisque ut erat. Curabitur gravida nisi at nibh.",
+    "category": "Nuevo",
+    "brand": "Huawei",
+    "image": "img-phone-02.jpg"
+  },
+  {
+    "id": 12,
+    "name": "quam sollicitudin",
+    "price": 20411,
+    "discount": 21,
+    "description": "Duis mattis egestas metus. Aenean fermentum.",
+    "category": "Refaccionado",
+    "brand": "Kodak",
+    "image": "img-phone-03.jpg"
+  },
+  {
+    "id": 13,
+    "name": "non lectus",
+    "price": 36242,
+    "discount": 18,
+    "description": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.",
+    "category": "Nuevo",
+    "brand": "Alcatel",
+    "image": "img-phone-01.jpg"
+  },
+  {
+    "id": 14,
+    "name": "ut massa quis",
+    "price": 59297,
+    "discount": 30,
+    "description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis.",
+    "category": "Refaccionado",
+    "brand": "Motorola",
+    "image": "img-phone-02.jpg"
+  },
+  {
+    "id": 15,
+    "name": "maecenas pulvinar lobortis",
+    "price": 8932,
+    "discount": 20,
+    "description": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+    "category": "Nuevo",
+    "brand": "Philips",
+    "image": "img-phone-03.jpg"
+  },
+  {
+    "id": 16,
+    "name": "porttitor lorem",
+    "price": 69066,
+    "discount": 30,
+    "description": "Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+    "category": "Refaccionado",
+    "brand": "ZTE",
+    "image": "img-phone-01.jpg"
+  }
+]
