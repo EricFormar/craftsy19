@@ -18,7 +18,8 @@
                                     novalidate>
                                     <div class="col-12 mb-3 ">
                                         <input placeholder="Nombre" type="text" name="name" id="name"
-                                            class="form-control">
+                                            class="form-control <%= locals.errors && errors.name ? 'is-invalid' : null%> " value="<%= locals.old && locals.old.name ? locals.old.name : null %>">
+                                            <small class="text-danger ms-2"><%= locals.errors && errors.name ? errors.name.msg : null%></small>
                                     </div>
                                     <div class="col-12 col-md-6 mb-3">
                                         <select name="category" id="category" class="form-select" required>
@@ -44,30 +45,26 @@
                                     </div>
                                     <div class="col-12 mb-3">
 
-                                        <textarea placeholder="Descripcion" name="descripcion" id="descripcion"
-                                            cols="30" rows="3" class="form-control" required
+                                        <textarea placeholder="Descripcion" name="description" id="description"
+                                            cols="30" rows="3" class="form-control"
                                             style="resize: none;"></textarea>
 
                                     </div>
 
                                     <div class="col-12 col-md-6 mb-3">
-                                        <input placeholder="Precio" type="number" name="precio" id="precio"
+                                        <input placeholder="Precio" type="number" name="price" id="price"
                                             class="form-control">
-
                                     </div>
 
 
                                     <div class="col-12 col-md-6 mb-3">
-                                        <input placeholder="Descuento" type="number" name="discount" id="discount"
+                                        <input placeholder="Descuento" type="number" name="discount" id="discount" value="0"
                                             class="form-control">
-
-
                                     </div>
 
                                     <div class="col-12 col-md-6 mb-3 ">
-                                        <input type="file" name="image" id="imagen" accept="image/*"
+                                        <input type="file" name="image" id="image" accept="image/*"
                                             class="form-control">
-
 
                                     </div>
 
