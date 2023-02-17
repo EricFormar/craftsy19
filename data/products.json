@@ -11,12 +11,12 @@
    },
    {
       "id": 2,
-      "name": "congue elementum",
+      "name": "Iphone 13",
       "price": 51194,
       "discount": 28,
       "description": "Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
       "category": "Refaccionado",
-      "brand": "Huawei",
+      "brand": "Iphone",
       "image": "img-phone-02.jpg"
    },
    {
@@ -164,9 +164,19 @@
       "name": "Iphone 11",
       "price": 300000,
       "discount": 0,
-      "category": "Nuevos",
+      "category": "Nuevo",
       "brand": "Iphone",
       "description": "Bueno pero carito!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
       "image": null
+   },
+   {
+      "id": 18,
+      "name": "Producto",
+      "price": 60000,
+      "discount": 0,
+      "category": "Nuevo",
+      "brand": "Huawei",
+      "description": "Lorem ipsum dolor amet sit",
+      "image": "1676673931107_products_.png"
    }
 ]

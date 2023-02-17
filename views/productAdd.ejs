@@ -10,7 +10,6 @@
                         <div class="card shadow">
                             <div class="card-header">
                                 <h4>CARGA DE PRODUCTO</h4>
-
                             </div>
                             <div class="card-body">
 
@@ -22,21 +21,22 @@
                                             <small class="text-danger ms-2"><%= locals.errors && errors.name ? errors.name.msg : null%></small>
                                     </div>
                                     <div class="col-12 col-md-6 mb-3">
-                                        <select name="category" id="category" class="form-select" required>
+                                        <select name="category" id="category" class="form-select <%= (locals.errors && errors.category) && 'is-invalid'%>" required>
                                             <option value="" selected hidden>Categoría</option>
                                             <% categories.forEach(category=> { %>
-                                                <option value="<%= category %>">
+                                                <option value="<%= category %>" <%= (locals.old && old.category && old.category === category) && 'selected'%>>
                                                     <%= category %>
                                                 </option>
                                                 <% }) %>
                                         </select>
+                                        <small class="text-danger ms-2"><%= locals.errors && errors.category ? errors.category.msg : null%></small>
 
                                     </div>
                                     <div class="col-12 col-md-6 mb-3">
-                                        <select name="brand" id="brand" class="form-select" required>
+                                        <select name="brand" id="brand" class="form-select <%= (locals.errors && errors.brand) && 'is-invalid'%>">
                                             <option value="" selected hidden>Marca</option>
                                             <% brands.forEach(brand=> { %>
-                                                <option value="<%= brand %>">
+                                                <option value="<%= brand %>" <%= (locals.old && old.brand && old.brand === brand) && 'selected'%>>
                                                     <%= brand %>
                                                 </option>
                                                 <% }) %>
@@ -46,25 +46,31 @@
                                     <div class="col-12 mb-3">
 
                                         <textarea placeholder="Descripcion" name="description" id="description"
-                                            cols="30" rows="3" class="form-control"
-                                            style="resize: none;"></textarea>
+                                            cols="30" rows="3" class="form-control <%= (locals.errors && errors.description) && 'is-invalid'%>"
+                                            style="resize: none;"><%= locals.old && locals.old.description ? locals.old.description : null %></textarea>
+                                            <small class="text-danger ms-2"><%= locals.errors && errors.description? errors.description.msg : null%></small>
 
                                     </div>
 
                                     <div class="col-12 col-md-6 mb-3">
-                                        <input placeholder="Precio" type="number" name="price" id="price"
-                                            class="form-control">
+                                        <input placeholder="Precio" type="number" name="price" id="price" value="<%= locals.old && locals.old.price ? locals.old.price : null %>"
+                                            class="form-control <%= (locals.errors && errors.price) && 'is-invalid'%>">
+                                            <small class="text-danger ms-2"><%= locals.errors && errors.price? errors.price.msg : null%></small>
+
                                     </div>
 
 
                                     <div class="col-12 col-md-6 mb-3">
                                         <input placeholder="Descuento" type="number" name="discount" id="discount" value="0"
-                                            class="form-control">
+                                            class="form-control <%= (locals.errors && errors.discount) && 'is-invalid'%>">
+                                            <small class="text-danger ms-2"><%= locals.errors && errors.discount? errors.discount.msg : null%></small>
+
                                     </div>
 
                                     <div class="col-12 col-md-6 mb-3 ">
                                         <input type="file" name="image" id="image" accept="image/*"
-                                            class="form-control">
+                                            class="form-control  <%= (locals.errors && errors.image) && 'is-invalid'%>">
+                                            <small class="text-danger ms-2"><%= locals.errors && errors.image? errors.image.msg : null%></small>
 
                                     </div>
 
