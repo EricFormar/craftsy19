@@ -97,10 +97,26 @@
             </div>
           </section>
             <main>
+             
 
                 <section class="productos">
+                  <h3>Novedades</h3>
 
-                    <% products.forEach(({image,name,description,id})=> { %>
+                    <% newests.forEach(({image,name,description,id})=> { %>
+                      <%- include('./partials/product_card',{
+                        image,
+                        name,
+                        id
+                      }) %>
+
+
+                        <% }) %>
+
+                      
+            
+                  <h3>Refaccionados</h3>
+
+                    <% refurbished.forEach(({image,name,description,id})=> { %>
                         <article>
                                 <img width="100%" src="/images/products/<%=image ? image : 'default-image.png'%>" alt="">
 
@@ -110,8 +126,7 @@
                             </h4>
                            
                             <div class="text-end">
-                                <a class="btn btn-sm btn-dark" href="/products/detail/<%= id %>">ver
-                                    más</a>
+                                <a class="btn btn-sm btn-dark" href="/products/edit/<%= id %>">editar</a>
                                 
                             </div>
 

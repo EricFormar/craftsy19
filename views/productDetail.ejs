@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head',{
+    title : 'Producto'
+}) %>
+
+    <body class="">
+        <%- include('./partials/header') %>
+    
+            <main class="container mt-3">
+             
+
+                <section class="row">
+                  <h3 class="alert alert-light">Producto</h3>
+                  <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                              <img src="/images/products/<%= image ? image : 'default-placeholder.png' %>"  width="100%"
+                                alt="...">
+                            </div>
+                            <div class="col-8 d-flex flex-column justify-content-between">
+                              <div>
+                                <div class="d-flex justify-content-between">
+                                    <h5 class="card-title">
+                                        <%= name %>
+                                      </h5>
+                                    <div class="text-end">
+                                      
+                                          <% if (discount) { %>
+                                           
+                                            <div class="d-flex align-items-center">
+                                                <del class="text-danger">$<%= price %></del>
+                                                <h2>$<%= (price - (price * discount / 100)).toFixed(0) %></h2>
+                                            </div>
+                                            <h4 class="text-muted"><%=discount%>%OFF</h4>
+                                          <% }else{ %>
+                                            <h2>$<%= (price).toFixed(0) %></h2>
+                                          <% } %>
+                                    </div>
+                                    
+                                      
+                                </div>
+                                
+                                <hr>
+                                <p class="card-text">
+                                  <%= description %>
+                                </p>
+                              </div>
+                              <div class="d-flex justify-content-end gap-2">
+                                <button class="btn btn-secondary">Agregar al carrito</button>
+                                <button class="btn btn-dark">Comprar</button>
+
+                              </div>
+                              
+                            
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+
+              
+
+                 
+
+                      
+            
+              
+                </section>
+           
+               
+            </main>
+            <%- include('./partials/footer') %>
+            <%- include('./partials/scripts') %>
+
+    </body>
+
+</html>

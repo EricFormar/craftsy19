@@ -1,11 +1,14 @@
 const { validationResult } = require("express-validator");
 const { readJSON, writeJSON } = require("../data");
 
+const categories = readJSON('categories.json');
+const brands = readJSON('brands.json');
+
 module.exports = {
   list: (req, res) => {
     const products = readJSON('products.json');
 
-    return res.render("admin/adminProducts", {
+    return res.render("products", {
       products,
     });
   },
@@ -15,7 +18,7 @@ module.exports = {
     const product = products.find((product) => product.id === +req.params.id);
 
     return res.render("productDetail", {
-      product,
+      ...product,
     });
   },
   search: (req, res) => {
@@ -55,8 +58,8 @@ module.exports = {
 
       }else{
          return res.render('productAdd',{
-          categories : readJSON('categories.json'),
-          brands : readJSON('brands.json'),
+          categories,
+          brands,
           errors : errors.mapped(),
           old : req.body
          })
@@ -72,6 +75,8 @@ module.exports = {
 
     return res.render("productEdit", {
       product,
+      brands,
+      categories
     });
   },
   update: (req, res) => {

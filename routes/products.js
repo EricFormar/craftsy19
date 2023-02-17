@@ -7,7 +7,7 @@ const router = express.Router();
 /* /products */
 
 router
-    .get('/', list)
+    .get('/list', list)
     .get('/detail/:id', detail)
     .get('/add',add)
     .post('/add', uploadImageProduct.single('image'), productAddValidator, store)

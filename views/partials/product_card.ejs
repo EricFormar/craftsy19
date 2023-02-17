@@ -1,13 +1,18 @@
+<article>
+  <img width="100%" src="/images/products/<%=image ? image : 'default-image.png'%>" alt="">
 
-<article class="home__main__section__article--product">
-    <figure>
-      <img src="/images/products/<%= image%>" alt="" />
-    </figure>
-    <h3><%= name %></h3>
-    <p>
-      <%= description %>  
-    </p>
-    <a class="general__button__product" href="/products/detail/<%= id %>"
-      >ver más</a
-    >
-  </article>
+<img class="img-discount" src="/images/img-descuento.png" alt="">
+<h4>
+  <%= name %>
+</h4>
+
+<div class="d-flex justify-content-end gap-2">
+  <a class="btn btn-success" href="/products/edit/<%= id %>"><i class="fas fa-edit"></i></a>
+  <form action="">
+    <button class="btn btn-danger" type="su
+    "><i class="fas fa-trash"></i></button>
+  </form>
+  
+</div>
+
+</article>
